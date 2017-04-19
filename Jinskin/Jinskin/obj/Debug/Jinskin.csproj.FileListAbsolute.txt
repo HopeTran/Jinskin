@@ -77,6 +77,6 @@ C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\Microsoft.Owin.Security.O
 C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\obj\Debug\Jinskin.csprojResolveAssemblyReference.cache
 C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\obj\Debug\Jinskin.dll
 C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\obj\Debug\Jinskin.pdb
+C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\obj\Debug\Jinskin.csprojResolveAssemblyReference.cache
