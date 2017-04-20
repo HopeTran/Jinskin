@@ -218,6 +218,7 @@
     <Compile Include="Controllers\UserSession.cs" />
     <Compile Include="Framework\Account.cs" />
     <Compile Include="Framework\Category.cs" />
+    <Compile Include="Framework\CustomAuthorize.cs" />
     <Compile Include="Framework\JinskinDbContext.cs" />
     <Compile Include="Framework\Product.cs" />
     <Compile Include="Global.asax.cs">

@@ -1,4 +1,5 @@
 ﻿using Jinskin.Controllers;
+using Jinskin.Framework;
 using Jinskin.Models.Admin;
 using System;
 using System.Collections.Generic;
@@ -8,25 +9,25 @@ using System.Web.Mvc;
 
 namespace Jinskin.Controllers
 {
-    
+    [CustomAuthorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         // GET: Admin
-        //[Authorize]
+        
         public ActionResult Index()
         {
              return View();
         }
 
         // get: login
-
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
 
-
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginAdmin model)
