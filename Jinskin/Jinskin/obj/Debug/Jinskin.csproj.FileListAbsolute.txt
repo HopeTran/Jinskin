@@ -80,3 +80,9 @@ C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\Microsoft.Owin.Security.M
 C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\obj\Debug\Jinskin.dll
 C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\obj\Debug\Jinskin.pdb
 C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\obj\Debug\Jinskin.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\System.Net.Http.Formatting.dll
+C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\System.Web.Http.dll
+C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\System.Web.Http.WebHost.dll
+C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\System.Net.Http.Formatting.xml
+C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\System.Web.Http.xml
+C:\Users\PC\Desktop\ASPNET\Jinskin\Jinskin\Jinskin\bin\System.Web.Http.WebHost.xml

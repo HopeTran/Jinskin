@@ -18,6 +18,8 @@ namespace Jinskin.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        private const string LoginPath = "/Admin/Login.cshtml";
+
         public AccountController()
         {
         }

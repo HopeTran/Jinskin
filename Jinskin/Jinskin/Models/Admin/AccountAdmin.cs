@@ -9,11 +9,11 @@ namespace Jinskin.Models.Admin
 {
     public class AccountAdmin
     {
-        private JinskinDBContext context = null;
+        private JinskinDbContext context = null;
 
         public AccountAdmin()
         {
-            context = new JinskinDBContext();
+            context = new JinskinDbContext();
         }
 
         public bool Login(string Username, string Password)

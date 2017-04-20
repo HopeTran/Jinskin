@@ -5,14 +5,16 @@ namespace Jinskin.Framework
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class JinskinDBContext : DbContext
+    public partial class JinskinDbContext : DbContext
     {
-        public JinskinDBContext()
-            : base("name=JinskinDBContext")
+        public JinskinDbContext()
+            : base("name=JinskinDbContext")
         {
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -23,6 +25,10 @@ namespace Jinskin.Framework
             modelBuilder.Entity<Account>()
                 .Property(e => e.Password)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Product>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
         }
     }
 }

@@ -6,14 +6,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebApplication1.Controllers
+namespace Jinskin.Controllers
 {
+    
     public class AdminController : Controller
     {
         // GET: Admin
+        //[Authorize]
         public ActionResult Index()
         {
-            return View();
+             return View();
         }
 
         // get: login
@@ -30,9 +32,11 @@ namespace WebApplication1.Controllers
         public ActionResult Login(LoginAdmin model)
         {
             var result = new AccountAdmin().Login(model.Username, model.Password);
+            //if (Membership.ValidateUser(model.Username, model.Password) && ModelState.IsValid)
             if (result && ModelState.IsValid)
             {
                 SessionHelper.SetSession(new UserSession() { Username = model.Username });
+                //FormsAuthentication.SetAuthCookie(model.Username, model.RememberMe);
                 return RedirectToAction("Index", "Admin");
             }
             else
@@ -41,5 +45,14 @@ namespace WebApplication1.Controllers
             }
             return View(model);
         }
+
+        //CategoryAdmin
+        public ActionResult CategoryAdmin()
+        {
+            var iplCate = new CategoryAdmin();
+            var model = iplCate.ListAll();
+            return View(model);
+        }
     }
 }
+

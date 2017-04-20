@@ -18,6 +18,12 @@ namespace Jinskin
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                "Admin", // Route name
+                "{controller}/{action}/{id}",
+                new { area = "Admin", controller = "Admin", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }
