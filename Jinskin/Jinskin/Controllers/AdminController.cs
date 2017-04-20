@@ -47,7 +47,7 @@ namespace Jinskin.Controllers
         }
 
         //CategoryAdmin
-        public ActionResult CategoryAdmin()
+        public ActionResult Category()
         {
             var iplCate = new CategoryAdmin();
             var model = iplCate.ListAll();
