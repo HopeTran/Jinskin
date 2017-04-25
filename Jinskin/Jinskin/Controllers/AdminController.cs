@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Jinskin.Controllers
 {
-    [CustomAuthorize(Roles = "Admin")]
+    //[CustomAuthorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         // GET: Admin
@@ -53,6 +53,39 @@ namespace Jinskin.Controllers
             var iplCate = new CategoryAdmin();
             var model = iplCate.ListAll();
             return View(model);
+        }
+        //Create category
+        [HttpGet]
+        public ActionResult CreateCat()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateCat(Category collection)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var model = new CategoryAdmin();
+                    int res = model.CreateCat(collection.Name, collection.Alias, collection.ParentID, collection.Order, collection.Status);
+                    if (res > 0)
+                    {
+                        return RedirectToAction("Category");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Thêm mới không thành công");
+                    }
+                    
+                }
+                return View(collection);
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
