@@ -24,6 +24,8 @@ namespace Jinskin.Models.Admin
 
         public int CreateCat(string name, string alias, int? parentid, int? order, bool? status)
         {
+            string strQuery = "Sp_Category_Insert1 @Name,@Alias,@ParentID,@Order,@Status";
+            status = status == null ? false : status;
             object[] parameters =
             {
                 new SqlParameter("@Name", name),
@@ -32,9 +34,9 @@ namespace Jinskin.Models.Admin
                 new SqlParameter("@Order", order),
                 new SqlParameter("@Status", status)
             };
-            int res = context.Database.ExecuteSqlCommand("Sp_Category_Insert @Name,@Alias,@ParentID,@Order,@Status", parameters);
+            int res = context.Database.ExecuteSqlCommand(strQuery, parameters);
             return res;
-            
+
         }
     }
 }

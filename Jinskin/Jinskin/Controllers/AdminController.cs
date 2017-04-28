@@ -66,6 +66,7 @@ namespace Jinskin.Controllers
         {
             try
             {
+
                 if (ModelState.IsValid)
                 {
                     var model = new CategoryAdmin();
@@ -82,7 +83,7 @@ namespace Jinskin.Controllers
                 }
                 return View(collection);
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
