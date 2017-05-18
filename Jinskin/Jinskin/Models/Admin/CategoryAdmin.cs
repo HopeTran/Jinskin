@@ -38,5 +38,24 @@ namespace Jinskin.Models.Admin
             return res;
 
         }
+
+        //public int EditCat(string name, string alias, int? parentid, int? order, bool? status)
+        //{
+        //    string strQuery = "Sp_Category_Insert1 @Name,@Alias,@ParentID,@Order,@Status";
+        //    status = status == null ? false : status;
+        //    object[] parameters =
+        //    {
+        //        new SqlParameter("@Name", name),
+        //        new SqlParameter("@Alias", alias),
+        //        new SqlParameter("@ParentID", parentid),
+        //        new SqlParameter("@Order", order),
+        //        new SqlParameter("@Status", status)
+        //    };
+        //    int res = context.Database.ExecuteSqlCommand(strQuery, parameters);
+        //    return res;
+
+        //}
+
+
     }
 }

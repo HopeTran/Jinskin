@@ -3,7 +3,9 @@ using Jinskin.Framework;
 using Jinskin.Models.Admin;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,7 +15,10 @@ namespace Jinskin.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        
+        public JinskinDbContext db = new JinskinDbContext();
+
+        public int? ParentID { get; private set; }
+
         public ActionResult Index()
         {
              return View();
@@ -47,14 +52,14 @@ namespace Jinskin.Controllers
             return View(model);
         }
 
-        //CategoryAdmin
+        //Category Index
         public ActionResult Category()
         {
             var iplCate = new CategoryAdmin();
             var model = iplCate.ListAll();
             return View(model);
         }
-        //Create category
+        //Category Create
         [HttpGet]
         public ActionResult CreateCat()
         {
@@ -87,6 +92,35 @@ namespace Jinskin.Controllers
             {
                 return View();
             }
+        }
+
+        //Category Edit
+        public ActionResult EditCat(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category categories = db.Categories.Find(id);
+            if (categories == null)
+            {
+                return HttpNotFound();
+            }
+            return View(categories);
+        }
+
+        // POST: /Category/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditCat([Bind(Include = "ID,Name,ParentID,Status")] Category categories)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(categories).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Category");
+            }
+            return View("Category");
         }
     }
 }

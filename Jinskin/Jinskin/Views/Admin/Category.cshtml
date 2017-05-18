@@ -33,7 +33,12 @@
                                 <td>@(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToString("dd/MM/yyyy") : "")</td>
                                 <td class="center">@item.Order.GetValueOrDefault(0)</td>
                                 <td class="center">@(item.Status.GetValueOrDefault(false) ? "Actice" : "Blocked")</td>
-                                <td><a href=""></a></td>
+                                <td>
+                                    @*<input value="Edit" type="button" class="btn btn-success" onclick="ConfirmEditBlock('@item.ID')"/>*@
+                                    @Html.ActionLink("Edit", "EditCat", new { id = item.ID })
+                                    <input value="Delete" type="button" class="btn btn-danger" />
+                                    <input value="Comment" type="button" class="btn btn-danger" />
+                                </td>
                             </tr>
                         }
 
@@ -48,3 +53,15 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+<script>
+    function ConfirmEditBlock(id) {
+        $.ajax({
+            url: '@Url.Action("GetCat", "Admin")',
+            data: { id: id },
+            type: 'POST',
+            success: function (rs) {
+            }
+
+        });
+    }
+</script>
