@@ -122,6 +122,32 @@ namespace Jinskin.Controllers
             }
             return View("Category");
         }
+        
+        public ActionResult DeleteCat(FormCollection fcNotUsed, int id = 0)
+        {
+            Category categories = db.Categories.Find(id);
+            if (categories == null)
+            {
+                return HttpNotFound();
+            }
+            db.Categories.Remove(categories);
+            db.SaveChanges();
+            return RedirectToAction("Category");
+        }
+
+        public ActionResult DetailsCat(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category categories = db.Categories.Find(id);
+            if (categories == null)
+            {
+                return HttpNotFound();
+            }
+            return View(categories);
+        }
     }
 }
 

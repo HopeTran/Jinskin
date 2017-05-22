@@ -6,6 +6,7 @@
 
 <div class="panel-heading">
     <h1>Category List</h1>
+    <a href="/Admin/CreateCat" class="btn btn-success">Create</a>
 </div>
 <!-- /.row -->
 <div class="row">
@@ -35,9 +36,10 @@
                                 <td class="center">@(item.Status.GetValueOrDefault(false) ? "Actice" : "Blocked")</td>
                                 <td>
                                     @*<input value="Edit" type="button" class="btn btn-success" onclick="ConfirmEditBlock('@item.ID')"/>*@
-                                    @Html.ActionLink("Edit", "EditCat", new { id = item.ID })
-                                    <input value="Delete" type="button" class="btn btn-danger" />
-                                    <input value="Comment" type="button" class="btn btn-danger" />
+                                    
+                                    <a href="/Admin/EditCat/@item.ID" class="btn btn-danger">Edit</a>
+                                    <a href="/Admin/DeleteCat/@item.ID" class="btn btn-danger">Delete</a>
+                                    <a href="/Admin/DetailsCat/@item.ID" class="btn btn-danger">Details</a>
                                 </td>
                             </tr>
                         }
